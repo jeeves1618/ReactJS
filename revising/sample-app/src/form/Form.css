@@ -1,0 +1,25 @@
+.formSection {
+  background-color: white;
+  width: 80%;
+  margin: 0 10% 0 10%;
+  text-align: center;
+}
+
+button {
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  margin-left: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+input {
+  border: 2px solid black;
+  height: 22px;
+  border-radius: 5px;
+}
