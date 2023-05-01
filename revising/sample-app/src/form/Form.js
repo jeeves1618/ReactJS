@@ -9,7 +9,7 @@ function Form(props) {
   }
 
   function addToCatalogueHandler(event) {
-    event.preventDefault();
+    event.preventDefault(); //This is preventing the reload of the page. It retains the below console log.
     props.onAddBook(enteredValue);
     setEnteredValue("");
   }

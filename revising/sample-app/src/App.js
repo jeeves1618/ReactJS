@@ -4,9 +4,21 @@ import BookList from "./list/BookList";
 import { useState } from "react";
 function App() {
   let defaultBooks = [
-    { title: "The Blind Watchmaker", bookId: "B001" },
-    { title: "A random walk down wall street", bookId: "B002" },
-    { title: "Arguably", bookId: "B003" },
+    {
+      title: "The Blind Watchmaker",
+      bookId: Math.trunc(Math.random().toString() * 1000000),
+      isbn: "978-0393022162",
+    },
+    {
+      title: "A random walk down wall street",
+      bookId: Math.trunc(Math.random().toString() * 1000000),
+      isbn: "978-0393047813",
+    },
+    {
+      title: "Arguably",
+      bookId: Math.trunc(Math.random().toString() * 1000000),
+      isbn: "978-1455504114",
+    },
   ];
 
   const [bookList, setBookList] = useState(defaultBooks);
@@ -14,22 +26,31 @@ function App() {
   function addBooks(bookAdded) {
     let newBook = {
       title: bookAdded,
-      bookId: "B004",
+      bookId: Math.trunc(Math.random().toString() * 1000000),
+      isbn: "978-0000000000",
     };
-    let pushList = defaultBooks;
-    pushList.push(newBook); //Push is not working here. Every time I add a new book, it replacing the 4th one in the defaultBooks list above.
+    //let pushList = defaultBooks;
+    //pushList.push(newBook); //Push is not working here. Every time I add a new book, it replacing the 4th one in the defaultBooks list above.
     setBookList(function addBook(existingBooks) {
-      return [newBook, ...existingBooks]; //Spread operator works here. I have to analyze why push isn't working.
+      return [...existingBooks, newBook]; //Spread operator works here. I have to analyze why push isn't working.
     });
-    console.log("bookList : " + bookList);
-    console.log("pushList : " + pushList);
+  }
+
+  function deleteBooks(bookDeletedTile) {
+    console.log(bookDeletedTile + " is deleted");
+    setBookList(function delBook(existingBooks) {
+      const updatedList = existingBooks.filter(
+        (book) => book.title !== bookDeletedTile
+      );
+      return updatedList;
+    });
   }
 
   return (
     <div className="App">
       <Header></Header>
       <Form onAddBook={addBooks}></Form>
-      <BookList books={bookList}></BookList>
+      <BookList books={bookList} onDeleteBook={deleteBooks}></BookList>
     </div>
   );
 }
