@@ -22,4 +22,12 @@ input {
   border: 2px solid black;
   height: 22px;
   border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+.form-control.invalid button {
+  background-color: rgb(187, 161, 161); /* Green */
+  border: red;
+  color: red;
+  font-weight: bold;
 }
