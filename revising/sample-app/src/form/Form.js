@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Form.css";
+import Button from "../utils/Button";
 
 function Form(props) {
   const [enteredValue, setEnteredValue] = useState("");
@@ -36,7 +37,7 @@ function Form(props) {
           }}
         ></input>
         <div className={`form-control ${!isValidTitle ? "invalid" : ""}`}>
-          <button type="submit">Add to catalogue</button>
+          <Button type="submit">Add to catalogue</Button>
         </div>
         <p></p>
         <hr></hr>

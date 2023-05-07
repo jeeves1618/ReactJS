@@ -1,5 +1,6 @@
 import React from "react";
 import "./BookItem.css";
+import Button from "../utils/Button";
 
 function BookItem(props) {
   function deleteHandler(event) {
@@ -20,7 +21,7 @@ function BookItem(props) {
       </ul>
       <div className="delUpdButton">
         <form onSubmit={deleteHandler}>
-          <button type="submit">Delete</button>
+          <Button type="submit">Delete</Button>
         </form>
       </div>
     </div>
