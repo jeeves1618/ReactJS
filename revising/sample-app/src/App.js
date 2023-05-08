@@ -28,6 +28,15 @@ function App() {
     let newBook = {
       title: bookAdded,
       bookId: Math.trunc(Math.random().toString() * 1000000),
+      /*
+      bookId: 500,
+
+      The above value assignment on key would have resulted in the warning:Encountered 
+      two children with the same key, `500`. Keys should be unique so that components 
+      maintain their identity across updates. Non-unique keys may cause children to be 
+      duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+ 
+      */
       isbn: "978-0000000000",
     };
     //let pushList = defaultBooks;
