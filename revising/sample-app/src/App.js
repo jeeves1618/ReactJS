@@ -1,5 +1,6 @@
 import Header from "./header/Header";
 import Form from "./form/Form";
+import FormModule from "./form/FormModule";
 import BookList from "./list/BookList";
 import { useState } from "react";
 function App() {
@@ -51,6 +52,9 @@ function App() {
       <Header></Header>
       <Form onAddBook={addBooks}></Form>
       <BookList books={bookList} onDeleteBook={deleteBooks}></BookList>
+      <hr></hr>
+      <h2>Form using CSS Module</h2>
+      <FormModule onAddBook={addBooks}></FormModule>
     </div>
   );
 }
